@@ -7,7 +7,7 @@ export default function Hero() {
       <Header />
 
       <section
-        className="relative h-100 bg-cover bg-center "
+        className="relative h-100 bg-cover bg-center bg-fixed "
         style={{
           backgroundImage: "url('/images/hero/Section.png')",
         }}
@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
 
           <Link href="/Request">
-            <button className="mt-10 bg-orange-400  text-white px-10 py-4 rounded-full text-xl font-semibold h-14 w-full">
+            <button className="mt-10 bg-orange-400  text-white px-10 py-4 rounded-full text-xl font-medium h-14 w-full">
               Book Now
             </button>
           </Link>

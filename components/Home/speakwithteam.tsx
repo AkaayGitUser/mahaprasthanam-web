@@ -66,7 +66,7 @@ export default function Speakwithteam() {
 
             <div
                 className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center"
-                style={{ transform: `translateY(${offset * 0.25}px)` }}
+                style={{ transform: `translateY(${-offset * 0.4}px)` }}
             >
                 {/* Title */}
                 <h2 className="text-3xl md:text-[40px] font-bold text-white tracking-tight leading-tight font-plus-jakarta max-w-none mb-4 whitespace-nowrap">

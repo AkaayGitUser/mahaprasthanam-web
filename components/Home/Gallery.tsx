@@ -24,7 +24,7 @@ export default function Gallery() {
                 {/* Category Badge */}
                 <div className="flex items-center justify-center gap-2.5 mb-4">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#F58220]" />
-                    <span className="text-lg font-semibold text-[#F58220] tracking-wider uppercase font-plus-jakarta">
+                    <span className="text-lg font-semibold text-[#F58220] font-plus-jakarta tracking-wide">
                         Gallery
                     </span>
                 </div>
@@ -46,7 +46,7 @@ export default function Gallery() {
                         {images.map((src, index) => (
                             <div
                                 key={`img-1-${index}`}
-                                className="w-[21vw] min-w-[240px] max-w-[340px] h-full relative overflow-hidden rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] cursor-pointer shrink-0"
+                                className="w-[21vw] min-w-[240px] max-w-[340px] h-full relative overflow-hidden rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] cursor-pointer shrink-0 select-none"
                             >
                                 <Image
                                     src={src}
@@ -54,6 +54,7 @@ export default function Gallery() {
                                     fill
                                     sizes="340px"
                                     className="object-cover"
+                                    draggable={false}
                                 />
                             </div>
                         ))}
@@ -64,7 +65,7 @@ export default function Gallery() {
                         {images.map((src, index) => (
                             <div
                                 key={`img-2-${index}`}
-                                className="w-[21vw] min-w-[240px] max-w-[340px] h-full relative overflow-hidden rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] cursor-pointer shrink-0"
+                                className="w-[21vw] min-w-[240px] max-w-[340px] h-full relative overflow-hidden rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] cursor-pointer shrink-0 select-none"
                             >
                                 <Image
                                     src={src}
@@ -72,6 +73,7 @@ export default function Gallery() {
                                     fill
                                     sizes="340px"
                                     className="object-cover"
+                                    draggable={false}
                                 />
                             </div>
                         ))}

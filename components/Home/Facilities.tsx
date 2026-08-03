@@ -67,18 +67,18 @@ export default function Facilities() {
             {facilities.map((facility, index) => (
               <div
                 key={`facility-1-${index}`}
-                className="flex items-center h-[94px] py-[16px] px-[24px] gap-[24px] bg-white border border-[#ECECEC] rounded-full shadow-sm shrink-0"
+                className="flex items-center h-[72px] py-[12px] px-[20px] gap-[16px] bg-white border border-[#ECECEC] rounded-full shadow-sm shrink-0"
               >
-                <div className="w-[62px] h-[62px] shrink-0 relative">
+                <div className="w-[44px] h-[44px] shrink-0 relative">
                   <Image
                     src={facility.iconPath}
                     alt={facility.name}
                     fill
-                    sizes="62px"
+                    sizes="44px"
                     className="object-contain"
                   />
                 </div>
-                <span className="text-[22px] font-semibold text-[#1E293B] tracking-wide">
+                <span className="text-[18px] font-semibold text-[#1E293B] tracking-wide">
                   {facility.name}
                 </span>
               </div>
@@ -90,18 +90,18 @@ export default function Facilities() {
             {facilities.map((facility, index) => (
               <div
                 key={`facility-2-${index}`}
-                className="flex items-center h-[94px] py-[16px] px-[24px] gap-[24px] bg-white border border-[#ECECEC] rounded-full shadow-sm shrink-0"
+                className="flex items-center h-[72px] py-[12px] px-[20px] gap-[16px] bg-white border border-[#ECECEC] rounded-full shadow-sm shrink-0"
               >
-                <div className="w-[62px] h-[62px] shrink-0 relative">
+                <div className="w-[44px] h-[44px] shrink-0 relative">
                   <Image
                     src={facility.iconPath}
                     alt={facility.name}
                     fill
-                    sizes="62px"
+                    sizes="44px"
                     className="object-contain"
                   />
                 </div>
-                <span className="text-[22px] font-semibold text-[#1E293B] tracking-wide">
+                <span className="text-[18px] font-semibold text-[#1E293B] tracking-wide">
                   {facility.name}
                 </span>
               </div>
