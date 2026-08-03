@@ -16,7 +16,7 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
   exploreMoreHref = "#",
 }) => {
   return (
-    <section className="bg-[#F8F6F3] px-6 py-20 md:px-16 lg:px-24 font-sans text-slate-800">
+    <section className="bg-[#F8F6F3] px-6 py-8 md:px-16 lg:px-24 font-sans text-slate-800">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         {/* Left Column: Text Content */}
