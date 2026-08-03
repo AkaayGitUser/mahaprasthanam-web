@@ -2,11 +2,12 @@ import Image from "next/image";
 import Hero from "@/components/Home/Hero";
 import Aboutus from "@/components/Home/Aboutus";
 import Ourdesign from "@/components/Home/Ourdesign";
-import Facilities from "@/components/Home/Facilities"
-import Gallery from "@/components/Home/Gallery"
-import Testimonals from "@/components/Home/testimonals"
-import Ourblogs from "@/components/Home/ourblogs"
-import Footer from "@/components/layout/Footer"
+import Facilities from "@/components/Home/Facilities";
+import Speakwithteam from "@/components/Home/speakwithteam";
+import Gallery from "@/components/Home/Gallery";
+import Testimonals from "@/components/Home/testimonals";
+import Ourblogs from "@/components/Home/ourblogs";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Aboutus />
         <Ourdesign/>
         <Facilities />
+        <Speakwithteam />
         <Gallery />
         <Testimonals/>
         <Ourblogs/>
