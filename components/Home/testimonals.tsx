@@ -35,26 +35,25 @@ export default function Testimonals() {
   };
 
   return (
-    <section className="w-full bg-[#FAFAF8] py-20 ">
-      <div className="max-w-full mx-auto pl-12">
-        <div className="flex items-start justify-between gap-4">
-          
-          {/* 1. Left Featured Image with Integrated Orange Left Bar */}
-          <div className="relative w-[450px] h-[390px] flex-shrink-0 overflow-hidden flex shadow-sm">
-            <div className="w-[10px] h-full bg-[#F47C20] flex-shrink-0" />
-            <div className="relative w-full h-full">
-              <Image
-                src={active.image}
-                alt={active.author}
-                fill
-                quality={100}
-                className="object-cover"
-              />
-            </div>
-          </div>
-
+    <section className="w-full bg-[#FFFFFF] py-20 ">
+      <div className="max-w-full mx-auto pl-10">
+        <div className="flex items-start justify-between">
+         
+         {/* Left Image */}
+  <div className="relative w-[450px] h-[390px] flex-shrink-0 overflow-hidden flex shadow-sm">
+    <div className="w-[10px] h-full bg-[#F47C20] flex-shrink-0" />
+    <div className="relative w-full h-full">
+      <Image
+        src={active.image}
+        alt={active.author}
+        fill
+        quality={100}
+        className="object-cover"
+      />
+    </div>
+  </div>
           {/* 2. Middle Content Section */}
-          <div className="flex-1 max-w-[560px] pt-3">
+          <div className="flex-1 max-w-[620px] pt-3">
             {/* Tag / Category Badge */}
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#F47C20] inline-block" />
@@ -69,18 +68,18 @@ export default function Testimonals() {
 </h2>
 
             {/* Quote */}
-           <p className="mt-8 max-w-[470px] text-[22px] leading-[1.65] text-[#1E293B] font-manrope">
+           <p className="mt-6 max-w-[580px] text-[22px] leading-[1.65] text-[#1E293B] font-manrope">
             "{active.quote}"
             </p>
 
             {/* Author */}
-            <p className="mt-8 text-[22px] font-manrope text-[#1E293B]">
+            <p className="mt-6 text-[22px] font-manrope text-[#1E293B]">
   - {active.author}
 </p>
           </div>
 
           {/* 3. Right Section: Small Images & Next Button */}
-          <div className="flex flex-col items-start gap-5 flex-shrink-0 pt-[100px]">
+          <div className="flex flex-col items-start gap-5 flex-shrink-0 pt-[150px]">
             
             {/* Container masked to crop 2nd preview image off screen */}
             <div className="w-[185px] overflow-hidden">
