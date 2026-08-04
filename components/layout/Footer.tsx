@@ -14,10 +14,10 @@ export default function Footer() {
         />
       </div>
 
-    <footer className="bg-[#072B44] text-white">
+    <footer className="bg-[#0E2B3E] text-white ">
       {/* Contact Section */}
-      <div className="max-w-[1100px] mx-auto  px-6">
-        <div className=" relative -top-13 bg-[#0B3049] shadow-xl">
+      <div className="max-w-[1100px] mx-auto  px-6 mt-5">
+        <div className=" relative -top-13 bg-[#0E2B3E] shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-3">
             {/* Call */}
             <div className="flex items-center gap-6 px-10 py-8 border-r border-[#123C56]">
@@ -29,10 +29,10 @@ export default function Footer() {
               />
 
               <div>
-                <h3 className="text-[#F78B1F] text-md font-semibold ">
+                <h3 className="text-[#F78B1F] text-md font-semibold font-plus-jakarta ">
                   Give Us A Call
                 </h3>
-                <p className="text-md mt-2 text-gray-300">(91+) 9703153111</p>
+                <p className="text-sm mt-2 text-gray-300 font-manrope">(91+) 9703153111</p>
               </div>
             </div>
 
@@ -46,10 +46,10 @@ export default function Footer() {
               />
 
               <div>
-                <h3 className="text-[#F78B1F] text-md font-semibold">
+                <h3 className="text-[#F78B1F] text-md font-semibold font-plus-jakarta">
                   Send Us A Message
                 </h3>
-                <p className="text-md mt-2 text-gray-300">
+                <p className="text-sm mt-2 text-gray-300 font-manrope">
                   info@mahaprasthanam.com
                 </p>
               </div>
@@ -65,11 +65,11 @@ export default function Footer() {
               />
 
               <div>
-                <h3 className="text-[#F78B1F] text-md font-semibold">
+                <h3 className="text-[#F78B1F] text-md font-semibold font-plus-jakarta">
                   Office Location
                 </h3>
-                <p className="text-md  mt-2 text-gray-300">
-                  Hyderabad, Telangana
+                <p className="text-sm  mt-2 text-gray-300 font-manrope">
+                  JL. Raya Puputan No 142
                 </p>
               </div>
             </div>
@@ -77,50 +77,50 @@ export default function Footer() {
         </div>
 
         {/* Footer Content */}
-        <div className="grid lg:grid-cols-4 gap-15 pb-16">
+        <div className="grid lg:grid-cols-4 gap-20 ">
           {/* Logo */}
           <div>
             <Image
               src="/images/hero/vaikunta.png"
               alt="Logo"
-              width={350}
+              width={300}
               height={150}
             />
 
-            <div className="flex gap-5 mt-12">
-              <div className="w-14 h-10 rounded-full bg-[#F78B1F] flex items-center justify-center">
+            <div className="flex gap-4 mt-12">
+              <div className="w-10 h-9.5 rounded-full bg-[#F78B1F] flex items-center justify-center">
                 <Image
                   src="/images/hero/f.png"
                   alt="Facebook"
-                  width={35}
-                  height={35}
+                  width={33}
+                  height={33}
                 />
               </div>
 
-              <div className="w-14 h-10 rounded-full bg-[#F78B1F] flex items-center justify-center">
+              <div className="w-10 h-9.5 rounded-full bg-[#F78B1F] flex items-center justify-center">
                 <Image
                   src="/images/hero/t.png"
                   alt="Twitter"
-                  width={22}
-                  height={22}
+                  width={33}
+                  height={33}
                 />
               </div>
 
-              <div className="w-14 h-10 rounded-full bg-[#F78B1F] flex items-center justify-center">
+              <div className="w-10 h-9.5 rounded-full bg-[#F78B1F] flex items-center justify-center">
                 <Image
                   src="/images/hero/i.png"
                   alt="Instagram"
-                  width={35}
-                  height={35}
+                  width={33}
+                  height={33}
                 />
               </div>
 
-              <div className="w-14 h-10 rounded-full bg-[#F78B1F] flex items-center justify-center">
+              <div className="w-10 h-9.5 rounded-full bg-[#F78B1F] flex items-center justify-center">
                 <Image
                   src="/images/hero/l.png"
                   alt="LinkedIn"
-                  width={35}
-                  height={35}
+                  width={33}
+                  height={33}
                 />
               </div>
             </div>
@@ -128,15 +128,15 @@ export default function Footer() {
 
           {/* Locations */}
           <div>
-            <h2 className="text-[#F78B1F] text-xl font-semibold mb-5">
+            <h2 className="text-[#F78B1F] text-xl font-semibold mb-4 font-plus-jakarta">
               Our Locations
             </h2>
 
-            <h3 className="text-[#F78B1F] text-md font-semibold mb-4">
+            <h3 className="text-[#F78B1F] text-sm font-medium mb-3 font-plus-jakarta">
               Jubilee Hills
             </h3>
 
-            <p className="text-gray-400 text-sm ">
+            <p className="text-gray-400 text-sm font-manrope ">
               Near Whisper Valley,
               Film Nagar,
               Jubilee Hills,
@@ -146,12 +146,12 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="lg:pt-10">
-            <h3 className="text-[#F78B1F] text-lg font-semibold mb-4">
+          <div className="lg:pt-12">
+            <h3 className="text-[#F78B1F] text-sm font-medium mb-3 font-plus-jakarta">
               Punjagutta
             </h3>
 
-            <p className="text-gray-400 text-sm ">
+            <p className="text-gray-400 text-sm font-manrope">
               CCFW+W7M,
               Nagarjuna Circle Road,
               Dwarakapuri,
@@ -161,12 +161,12 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="lg:pt-10">
-            <h3 className="text-[#F78B1F] text-lg font-semibold mb-3">
+          <div className="lg:pt-12">
+            <h3 className="text-[#F78B1F] text-sm font-medium mb-3 font-plus-jakarta">
               Begumpet
             </h3>
 
-            <p className="text-gray-400 text-sm   ">
+            <p className="text-gray-400 text-sm font-manrope">
               Begumpet,
               Hyderabad,
               Telangana 500018
@@ -174,7 +174,7 @@ export default function Footer() {
           
           </div>
           {/* Copyright Section */}
-          <div className="col-span-full border-t border-gray-900 pt-4 flex flex-col md:flex-row justify-between items-center gap-2"> 
+          <div className="col-span-full border-t border-gray-900 pt-4 mb-6 flex flex-col md:flex-row justify-between items-center gap-2"> 
             <p className="text-gray-400 text-xs">
               Copyright © Vaikunta Mahaprasthanam Crematorium.   
             </p>

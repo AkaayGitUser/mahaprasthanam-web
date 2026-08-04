@@ -97,7 +97,7 @@ export default function BookPage() {
                 Farewell
               </h1>
 
-              <p className="text-md mt-10 max-w-md leading-relaxed">
+              <p className="text-md mt-10 max-w-md leading-relaxed font-manrope">
                 Begin the arrangements with ease. Share your requirements with
                 our team and we will guide you through the appropriate rituals,
                 services and arrangements.
@@ -106,7 +106,7 @@ export default function BookPage() {
 
             {/* Right Side Form */}
             <div className="bg-white rounded-md p-6 shadow-xl">
-              <h2 className="text-center text-black text-xl mb-4">
+              <h2 className="text-center font-manrope text-black text-lg font-semibold mb-4">
                 BOOK A SERVICE
               </h2>
 
@@ -247,12 +247,12 @@ export default function BookPage() {
                   className="border border-gray-300 text-black placeholder:text-black rounded-md w-full h-10 px-3"
                 />
 
-               
+                
               </div>
 
               <button
                 onClick={handleSubmit}
-                className="w-full h-10 mt-6 bg-orange-400 text-white rounded-full text-xl font-semibold"
+                className="w-full h-10 mt-6 bg-orange-400 text-white rounded-full text-md font-semibold font-plus-jakarta"
               >
                 Request Assistance
               </button>
