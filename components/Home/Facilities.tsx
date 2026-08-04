@@ -54,7 +54,7 @@ export default function Facilities() {
         </div>
 
         {/* Title */}
-        <h2 className="text-3xl md:text-5xl font-semibold text-center text-[#1E293B] tracking-tight mb-8 font-plus-jakarta">
+        <h2 className="text-3xl md:text-5xl font-medium text-center text-[#1E293B] tracking-tight mb-8 font-plus-jakarta">
           State of the art facilities
         </h2>
       </div>
@@ -78,7 +78,7 @@ export default function Facilities() {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-[18px] font-semibold text-[#1E293B] tracking-wide">
+                <span className="text-[18px] font-medium text-[#1E293B] tracking-wide">
                   {facility.name}
                 </span>
               </div>

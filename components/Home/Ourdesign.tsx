@@ -53,7 +53,7 @@ export default function Ourdesign() {
             • Our Design
           </p>
 
-          <h2 className="text-5xl font-bold text-gray-800 mt-2">
+          <h2 className="text-5xl font-medium text-gray-800 mt-2">
             The Three Pillars
           </h2>
         </div>

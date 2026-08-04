@@ -69,17 +69,17 @@ export default function Speakwithteam() {
                 style={{ transform: `translateY(${-offset * 0.4}px)` }}
             >
                 {/* Title */}
-                <h2 className="text-3xl md:text-[40px] font-bold text-white tracking-tight leading-tight font-plus-jakarta max-w-none mb-4 whitespace-nowrap">
+                <h2 className="text-3xl md:text-[40px] font-medium text-white tracking-tight leading-tight font-plus-jakarta max-w-none mb-4 whitespace-nowrap">
                     A Compassionate Hand Through Every Farewell
                 </h2>
 
                 {/* Description */}
-                <p className="text-sm md:text-[16px] text-gray-200/90 font-normal max-w-none leading-relaxed font-manrope mb-8">
+                <p className="text-base md:text-[14px] text-gray-200/90 font-normal max-w-none leading-relaxed font-manrope mb-8">
                     Every family deserves guidance, understanding and peace of mind. Our dedicated team is here to provide thoughtful assistance and seamless support, helping you honour your loved one&apos;s final journey with dignity and care.
                 </p>
 
                 {/* CTA Button */}
-                <button className="px-8 py-3 bg-[#FF8A00] hover:bg-[#e07b00] text-white font-bold text-base rounded-full shadow-md hover:shadow-lg active:scale-95 transition-all duration-300 cursor-pointer font-manrope">
+                <button className="px-8 py-3 bg-[#FF8A00] hover:bg-[#e07b00] text-white font-medium text-base rounded-full shadow-md hover:shadow-lg active:scale-95 transition-all duration-300 cursor-pointer font-manrope">
                     Speak with our team
                 </button>
             </div>

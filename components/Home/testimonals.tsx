@@ -37,11 +37,11 @@ export default function Testimonals() {
   return (
     <section className="w-full bg-[#FFFFFF] py-20 ">
       <div className="max-w-full mx-auto pl-10">
-        <div className="flex items-start justify-between">
+        <div className="flex items-start justify-between gap-6">
          
          {/* Left Image */}
-  <div className="relative w-[450px] h-[390px] flex-shrink-0 overflow-hidden flex shadow-sm">
-    <div className="w-[10px] h-full bg-[#F47C20] flex-shrink-0" />
+  <div className="relative w-[380px] h-[390px] flex-shrink-0 overflow-hidden flex shadow-sm">
+    <div className="w-[8px] h-full bg-[#F47C20] flex-shrink-0" />
     <div className="relative w-full h-full">
       <Image
         src={active.image}
@@ -57,7 +57,7 @@ export default function Testimonals() {
             {/* Tag / Category Badge */}
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#F47C20] inline-block" />
-              <span className="text-[#F47C20] uppercase tracking-[0.15em] text-large font-plus jakarta sans font-semibold">
+              <span className="text-[#F47C20] tracking-wide  font-plus jakarta sans font-semibold">
                 TESTIMONIALS
               </span>
             </div>
@@ -73,7 +73,7 @@ export default function Testimonals() {
             </p>
 
             {/* Author */}
-            <p className="mt-6 text-[22px] font-manrope text-[#1E293B]">
+            <p className="mt-6 text-[24px] font-manrope font-medium text-[#1E293B]">
   - {active.author}
 </p>
           </div>

@@ -30,7 +30,7 @@ export default function Gallery() {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-3xl md:text-5xl font-semibold text-center text-[#1E293B] tracking-tight mb-6 font-plus-jakarta">
+                <h2 className="text-3xl md:text-5xl font-medium text-center text-[#1E293B] tracking-tight mb-6 font-plus-jakarta">
                     A Place That Speaks Through Its Spaces
                 </h2>
             </div>

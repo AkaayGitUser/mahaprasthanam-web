@@ -30,7 +30,7 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
           </div>
 
           {/* Main Heading */}
-          <h3 className="text-3xl md:text-4xl lg:text-[45px] font-bold text-[#1E293B] leading-[1.15] font-plusjakartasans">
+          <h3 className="text-3xl md:text-4xl lg:text-[45px] font-medium text-[#1E293B] leading-[1.15] font-plusjakartasans">
             Every Life Deserves<br />
             A Dignified Farewell
           </h3>

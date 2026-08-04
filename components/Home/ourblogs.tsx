@@ -80,7 +80,7 @@ export const OurBlogsSection: React.FC<OurBlogsProps> = ({
           
           {/* Left Column: Title + 2 Cards */}
           <div className="lg:col-span-5 flex flex-col space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight pb-2">
+            <h2 className="text-3xl md:text-4xl font-medium text-slate-900 tracking-tight pb-2">
               Our Blogs
             </h2>
 
