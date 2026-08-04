@@ -57,8 +57,8 @@ export default function Testimonals() {
             {/* Tag / Category Badge */}
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#F47C20] inline-block" />
-              <span className="text-[#F47C20] tracking-wide  font-plus jakarta sans font-semibold">
-                TESTIMONIALS
+              <span className="text-[#F47C20] tracking-wide font-plus jakarta sans font-semibold">
+                Testimonials
               </span>
             </div>
 

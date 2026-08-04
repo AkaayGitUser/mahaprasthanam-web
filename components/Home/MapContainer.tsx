@@ -25,7 +25,7 @@ interface MapContainerProps {
 
 export default function MapContainer({ activeLocationId, onSelectLocation }: MapContainerProps) {
     return (
-        <div className="w-full h-[250px] md:h-[300px] relative overflow-hidden bg-[#0A1A24]">
+        <div id="map-section" className="w-full h-[250px] md:h-[300px] relative overflow-hidden bg-[#0A1A24]">
             <LazyMap activeLocationId={activeLocationId} onSelectLocation={onSelectLocation} />
         </div>
     );

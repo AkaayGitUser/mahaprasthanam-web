@@ -79,12 +79,18 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
           </div>
 
           {/* 10+ Years Of Experiences Counter (Aligned under Left Image) */}
-          <div className="absolute left-[8%] bottom-2 z-20 space-y-0.5 mb-10">
-            <div className="text-2xl md:text-3xl font-bold text-[#F38120]">
-              10+
+          <div className="absolute left-[8%] bottom-2 z-20 mb-8">
+            <div className="flex items-baseline gap-1">
+              <span className="text-2xl md:text-3xl font-medium text-[#F38120]">
+                10
+              </span>
+              <span className="text-xl md:text-2xl font-medium text-[#1E293B]">
+                +
+              </span>
             </div>
-            <div className="text-xs md:text-xs font-sm text-slate-500 leading-snug">
-              Years Of<br />Experiences
+            <div className="mt-2 text-lg md:text-base font-normal text-slate-600 leading-snug font-plus-jakarta">
+              Years Of<br />
+              Experiences
             </div>
           </div>
 

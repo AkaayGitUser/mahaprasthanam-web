@@ -157,8 +157,8 @@ export default function Map({ activeLocationId, onSelectLocation }: MapProps) {
         const map = L.map(mapContainerRef.current, {
             center: DEFAULT_CENTER,
             zoom: DEFAULT_ZOOM,
-            zoomControl: false, 
-            scrollWheelZoom: false, 
+            zoomControl: false,
+            scrollWheelZoom: false,
         });
 
         mapRef.current = map;
@@ -221,7 +221,7 @@ export default function Map({ activeLocationId, onSelectLocation }: MapProps) {
             if (marker) {
                 const isActive = loc.id === activeLocationId;
                 marker.setIcon(createCustomMarkerIcon(isActive, loc.name, loc.id));
-                
+
                 // Bring active marker to front
                 if (isActive) {
                     marker.setZIndexOffset(1000);
@@ -272,7 +272,7 @@ export default function Map({ activeLocationId, onSelectLocation }: MapProps) {
         <div className="relative w-full h-full">
             {/* Map Container */}
             <div ref={mapContainerRef} className="w-full h-full z-0" />
-            
+
             {/* Reset Focus Overlay Button */}
             {activeLocationId && (
                 <button
@@ -280,10 +280,10 @@ export default function Map({ activeLocationId, onSelectLocation }: MapProps) {
                     className="absolute bottom-4 right-4 z-[400] bg-[#0B2230]/90 hover:bg-[#0B2230] text-white border border-gray-700/50 rounded-full px-4 py-2 text-xs font-semibold tracking-wide flex items-center gap-1.5 shadow-lg active:scale-95 transition-all duration-200 cursor-pointer"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M15 3h6v6"/>
-                        <path d="M9 21H3v-6"/>
-                        <path d="M21 3l-7 7"/>
-                        <path d="M3 21l7-7"/>
+                        <path d="M15 3h6v6" />
+                        <path d="M9 21H3v-6" />
+                        <path d="M21 3l-7 7" />
+                        <path d="M3 21l7-7" />
                     </svg>
                     Reset Map View
                 </button>
