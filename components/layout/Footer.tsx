@@ -1,10 +1,17 @@
+"use client";
+
 import Image from "next/image";
 
-export default function Footer() {
-  return ( 
-      <>
-      {/* Top Image */}
-      <div className="w-full">
+interface FooterProps {
+    activeLocationId?: string | null;
+    onSelectLocation?: (id: string | null) => void;
+}
+
+export default function Footer({ activeLocationId, onSelectLocation }: FooterProps) {
+    return (
+        <>
+            {/* Top Image */}
+            {/* <div className="w-full">
         <Image
           src="/images/hero/map.png"
           alt="Map"
@@ -12,7 +19,7 @@ export default function Footer() {
           height={350}
           className="w-full h-[250px] object-cover"
         />
-      </div>
+      </div> */}
 
     <footer className="bg-[#0E2B3E] text-white ">
       {/* Contact Section */}
@@ -36,14 +43,14 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Mail */}
-            <div className="flex items-center gap-6 px-10 py-8 border-r border-[#123C56]">
-              <Image
-                src="/images/hero/mail.png"
-                alt="Mail"
-                width={25}
-                height={25}
-              />
+                            {/* Mail */}
+                            <div className="flex items-center gap-6 px-10 py-8 border-r border-[#123C56]">
+                                <Image
+                                    src="/images/hero/mail.png"
+                                    alt="Mail"
+                                    width={25}
+                                    height={25}
+                                />
 
               <div>
                 <h3 className="text-[#F78B1F] text-md font-semibold font-plus-jakarta">
@@ -55,14 +62,14 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Location */}
-            <div className="flex items-center gap-6 px-10 py-8">
-              <Image
-                src="/images/hero/m.png"
-                alt="Location"
-                width={25}
-                height={25}
-              />
+                            {/* Location */}
+                            <div className="flex items-center gap-6 px-10 py-8">
+                                <Image
+                                    src="/images/hero/m.png"
+                                    alt="Location"
+                                    width={25}
+                                    height={25}
+                                />
 
               <div>
                 <h3 className="text-[#F78B1F] text-md font-semibold font-plus-jakarta">
