@@ -38,7 +38,7 @@ const pillars: Pillar[] = [
 export default function Ourdesign() {
   return (
    <section
-  className="w-full min-h-screen py-20 bg-cover bg-center bg-no-repeat"
+  className="w-full min-h-screen py-13 bg-cover bg-center bg-no-repeat"
   style={{
     backgroundImage: "url('/design-images/design-bg.png')",
     backgroundRepeat: "repeat",

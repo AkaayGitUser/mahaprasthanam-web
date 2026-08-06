@@ -19,7 +19,7 @@ export default function Gallery() {
     ];
 
     return (
-        <section className="bg-white pt-8 pb-20 overflow-hidden relative">
+        <section className="bg-[#F8F6F3] pt-8 pb-20 overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Category Badge */}
                 <div className="flex items-center justify-center gap-2.5 mb-4">
