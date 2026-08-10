@@ -23,6 +23,16 @@ export default function BookPage() {
   const [attendees, setAttendees] = useState("");
 
   const [errors, setErrors] = useState({ ...initialErrors });
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [submittedDetails, setSubmittedDetails] = useState({
+  location: "",
+  service: "",
+  name: "",
+  mobile: "",
+  date: "",
+  attendees: "",
+  bookingId: "",
+});
 
   const validate = () => {
     const newErrors = { ...initialErrors };
@@ -62,227 +72,416 @@ export default function BookPage() {
   };
 
   const handleSubmit = (): boolean => {
-    if (validate()) {
-      alert("Form Submitted Successfully");
+  if (validate()) {
 
-      setLocation("");
-      setService("");
-      setName("");
-      setMobile("");
-      setDate("");
-      setAttendees("");
-      setErrors({ ...initialErrors });
+    // Generate booking ID
+    const bookingId = `VM-${new Date().getFullYear()}-${Math.floor(
+      10000 + Math.random() * 90000
+    )}`;
 
-      router.push("/Front");
-      return true; // Indicate successful submission
-    }
-    return false; // Indicate validation failure
-  };
+    // Save submitted details
+    setSubmittedDetails({
+      location,
+      service,
+      name,
+      mobile,
+      date,
+      attendees,
+      bookingId,
+    });
 
-  return (
-    <div>
-      <Header />
+    // Show success popup
+    setShowSuccess(true);
 
-      <section
-        className="relative min-h-screen bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/hero/Sections.png')",
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+    return true;
+  }
 
-        <div className="relative z-10 max-w-7xl mx-auto px-14 pt-40">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            {/* Left Side */}
-            <div>
-              <h1 className="text-5xl font-bold leading-tight">
-                Arrange a Dignified
-                <br />
-                Farewell
-              </h1>
+  return false;
+};
 
-              <p className="text-md mt-10 max-w-md leading-relaxed font-manrope">
-                Begin the arrangements with ease. Share your requirements with
-                our team and we will guide you through the appropriate rituals,
-                services and arrangements.
-              </p>
-            </div>
+return (
+  <div className="min-h-screen">
+    <Header />
 
-            {/* Right Side Form */}
-            <div className="bg-white rounded-md p-6 shadow-xl">
-              <h2 className="text-center font-manrope text-black text-lg font-semibold mb-4">
-                BOOK A SERVICE
-              </h2>
+    <section
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/images/hero/Sections.png')",
+      }}
+    >
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-              <div className="grid grid-cols-2 gap-5">
-                {/* Location */}
-                <div className="relative w-full">
-                  <select
-                    onChange={(e) => setLocation(e.target.value)}
-                    className="border border-gray-300 text-gray-700 rounded-md appearance-none focus:outline-none focus:ring-0 focus:border-gray-300 w-full h-10 px-3"
-                    defaultValue=""
-                  >
-                    <option value="" disabled hidden>
-                      {" "}
-                      Enter Location{" "}
-                    </option>{" "}
-                    <option className="bg-[#F8F6F3] text-black" value="Jubilee Hills">
-                      {" "}
-                      Jubilee Hills{" "}
-                    </option>{" "}
-                    <option className="bg-[#F8F6F3] text-black" value="Panjagutta">
-                      {" "}
-                      Panjagutta{" "}
-                    </option>{" "}
-                    <option className="bg-[#F8F6F3] text-black" value="Begumpet">
-                      Begumpet
-                    </option>{" "}
-                  </select>
-                  {errors.location && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.location}
-                    </p>
-                  )}
+      {/* MAIN CONTENT */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-10 lg:px-14 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-10">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
 
-                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                    <Image
-                      src="/images/hero/Group.png"
-                      alt="Dropdown"
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                </div>
+          {/* ================= LEFT CONTENT ================= */}
+          <div className="text-white text-center lg:text-left">
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              Arrange a Dignified
+              <br className="hidden sm:block" />
+              Farewell
+            </h1>
 
-                {/* Services */}
-                <div className="relative w-full">
-                  <select
-                    onChange={(e) => setService(e.target.value)}
-                    className="border border-gray-300 text-gray-700 rounded-md appearance-none focus:outline-none focus:ring-0 focus:border-gray-300 w-full h-10 px-3"
-                    defaultValue=""
-                  >
-                    <option value="" disabled hidden>
-                      {" "}
-                      Select Services{" "}
-                    </option>{" "}
-                    <option className="bg-[#F8F6F3]  text-black" value="Rituals & Last Rites">
-                      {" "}
-                      Rituals & Last Rites{" "}
-                    </option>{" "}
-                    <option className="bg-[#F8F6F3] text-black" value="Cremation Service">
-                      {" "}
-                      Cremation Service{" "}
-                    </option>{" "}
-                    <option className="bg-[#F8F6F3] text-black" value="Complete Funeral Assistance">
-                      {" "}
-                      Complete Funeral Assistance{" "}
-                    </option>{" "}
-                    <option className="bg-[#F8F6F3] text-black" value="Other Requirements">
-                      {" "}
-                      Other Requirements{" "}
-                    </option>{" "}
-                  </select>
+            <p className="text-sm sm:text-base md:text-lg mt-6 sm:mt-8 lg:mt-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-manrope text-white/90">
+              Begin the arrangements with ease. Share your requirements
+              with our team and we will guide you through the appropriate
+              rituals, services and arrangements.
+            </p>
 
-                  {errors.service && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.service}
-                    </p>
-                  )}
+          </div>
 
-                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                    <Image
-                      src="/images/hero/Group.png"
-                      alt="Dropdown"
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                </div>
 
-                {/* Name */}
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Enter Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="border border-gray-300 text-black placeholder:text-gray-700 rounded-md w-full h-10 px-3 focus:outline-none focus:ring-0 focus:border-gray-300"
-                    required
+          {/* ================= FORM ================= */}
+          <div className="w-full bg-white rounded-xl p-5 sm:p-6 md:p-7 lg:p-6 xl:p-8 shadow-2xl">
+
+            <h2 className="text-center font-manrope text-black text-base sm:text-lg md:text-xl font-semibold mb-5 sm:mb-6">
+              BOOK A SERVICE
+            </h2>
+
+            {/* FORM GRID */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+
+              {/* LOCATION */}
+              <div className="relative w-full">
+                <select
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  className="border border-gray-300 text-gray-700 rounded-lg appearance-none focus:outline-none  w-full h-11 sm:h-12 px-3 sm:px-4 text-sm sm:text-base bg-[#F8F6F3]"
+                >
+                  <option value="" disabled>
+                    Enter Location
+                  </option>
+
+                  <option value="Jubilee Hills">
+                    Jubilee Hills
+                  </option>
+
+                  <option value="Panjagutta">
+                    Panjagutta
+                  </option>
+
+                  <option value="Begumpet">
+                    Begumpet
+                  </option>
+                </select>
+
+                {errors.location && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
+                    {errors.location}
+                  </p>
+                )}
+
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <Image
+                    src="/images/hero/Group.png"
+                    alt="Dropdown"
+                    width={16}
+                    height={16}
                   />
-
-                  {errors.name && (
-                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                  )}
-                </div>
-
-                {/* Mobile */}
-                <div>
-                  <input
-                    type="tel"
-                    placeholder="Enter Mobile Number"
-                    value={mobile}
-                    onChange={(e) => setMobile(e.target.value)}
-                    maxLength={10}
-                    className="border border-gray-300 text-black placeholder:text-gray-700 rounded-md w-full h-10 px-3 focus:outline-none focus:ring-0 focus:border-gray-300"
-                  />
-
-                  {errors.mobile && (
-                    <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>
-                  )}
-                </div>
-
-                {/* Date */}
-                <div>
-                  <div className="relative w-full">
-                    <input
-                      type="date"
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
-                      className="border border-gray-300 text-gray-700 rounded-md w-full h-10 px-3 focus:outline-none focus:ring-0 focus:border-gray-300"
-                    />
-
-                    {/* <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                      <Image
-                        src="/images/hero/date.png"
-                        alt="Calendar"
-                        width={16}
-                        height={16}
-                      />
-                    </div> */}
-                  </div>
-
-                  {errors.date && (
-                    <p className="text-red-500 text-sm mt-1">{errors.date}</p>
-                  )}
-                </div>
-
-                {/* Attendees */}
-                <div>
-                  <input
-                    type="text"
-                    placeholder="No. of attendees"
-                    value={attendees}
-                    onChange={(e) => setAttendees(e.target.value)}
-                    className="border border-gray-300 text-black placeholder:text-gray-700 rounded-md w-full h-10 px-3 focus:outline-none focus:ring-0 focus:border-gray-300"
-                  />
-                  {errors.attendees && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.attendees}
-                    </p>
-                  )}
                 </div>
               </div>
-              <button
-                onClick={handleSubmit}
-                className="w-full h-10 mt-6 bg-orange-400 text-white rounded-full text-md font-semibold font-plus-jakarta"
-              >
-                Request Assistance
-              </button>
+
+
+              {/* SERVICE */}
+              <div className="relative w-full">
+                <select
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
+                  className="border border-gray-300 text-gray-700 rounded-lg appearance-none focus:outline-none  w-full h-11 sm:h-12 px-3 sm:px-4 text-sm sm:text-base bg-[#F8F6F3]"
+                >
+                  <option value="" disabled>
+                    Select Services
+                  </option>
+
+                  <option value="Rituals & Last Rites">
+                    Rituals & Last Rites
+                  </option>
+
+                  <option value="Cremation Service">
+                    Cremation Service
+                  </option>
+
+                  <option value="Complete Funeral Assistance">
+                    Complete Funeral Assistance
+                  </option>
+
+                  <option value="Other Requirements">
+                    Other Requirements
+                  </option>
+                </select>
+
+                {errors.service && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
+                    {errors.service}
+                  </p>
+                )}
+
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <Image
+                    src="/images/hero/Group.png"
+                    alt="Dropdown"
+                    width={16}
+                    height={16}
+                  />
+                </div>
+              </div>
+
+
+              {/* NAME */}
+              <div className="w-full">
+                <input
+                  type="text"
+                  placeholder="Enter Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="border border-gray-300 text-black placeholder:text-gray-500 rounded-lg w-full h-11 sm:h-12 px-3 sm:px-4 text-sm sm:text-base focus:outline-none "
+                />
+
+                {errors.name && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
+                    {errors.name}
+                  </p>
+                )}
+              </div>
+
+
+              {/* MOBILE */}
+              <div className="w-full">
+                <input
+                  type="tel"
+                  placeholder="Enter Mobile Number"
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
+                  maxLength={10}
+                  className="border border-gray-300 text-black placeholder:text-gray-500 rounded-lg w-full h-11 sm:h-12 px-3 sm:px-4 text-sm sm:text-base focus:outline-none"
+                />
+
+                {errors.mobile && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
+                    {errors.mobile}
+                  </p>
+                )}
+              </div>
+
+
+              {/* DATE */}
+              <div className="w-full">
+                <input
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className="border border-gray-300 text-gray-700 rounded-lg w-full h-11 sm:h-12 px-3 sm:px-4 text-sm sm:text-base focus:outline-none bg-white"
+                />
+
+                {errors.date && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
+                    {errors.date}
+                  </p>
+                )}
+              </div>
+
+
+              {/* ATTENDEES */}
+              <div className="w-full">
+                <input
+                  type="number"
+                  min="1"
+                  placeholder="No. of attendees"
+                  value={attendees}
+                  onChange={(e) => setAttendees(e.target.value)}
+                  className="border border-gray-300 text-black placeholder:text-gray-500 rounded-lg w-full h-11 sm:h-12 px-3 sm:px-4 text-sm sm:text-base focus:outline-none"
+                />
+
+                {errors.attendees && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
+                    {errors.attendees}
+                  </p>
+                )}
+              </div>
+
             </div>
+
+
+            {/* BUTTON */}
+            <button
+              onClick={handleSubmit}
+              className="w-full h-11 sm:h-12 mt-5 sm:mt-6 bg-[#E88A18] hover:bg-[#D97706] active:scale-[0.99] text-white rounded-full text-sm sm:text-base font-semibold font-plus-jakarta transition-all duration-200"
+            >
+              Request Assistance
+            </button>
+
           </div>
         </div>
-      </section>
+      </div>
+
+
+      {/* ================================================= */}
+      {/* SUCCESS POPUP */}
+      {/* ================================================= */}
+
+      
+  {showSuccess && (
+  <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 py-4">
+
+    <div className="relative w-full max-w-[430px] max-h-[95vh] overflow-y-auto rounded-2xl bg-white shadow-2xl">
+
+      {/* ================= TOP ORANGE SECTION ================= */}
+      <div className="bg-gradient-to-r from-[#FF8A00] to-[#FFA51F] px-5 py-4 sm:py-5 text-center">
+
+        {/* SUCCESS ICON */}
+        <div className="mx-auto mb-2 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-white shadow-md">
+          <span className="text-2xl sm:text-3xl font-medium text-green-500">
+            ✓
+          </span>
+        </div>
+
+        <h2 className="text-lg sm:text-xl font-bold text-white">
+          Success!
+        </h2>
+
+      </div>
+
+
+      {/* ================= POPUP CONTENT ================= */}
+      <div className="px-5 sm:px-6 py-4">
+
+        <h3 className="text-center text-base sm:text-lg font-bold text-[#1F2937]">
+          Form Submitted Successfully
+        </h3>
+
+        <p className="mt-1.5 text-center text-xs sm:text-sm text-gray-500 leading-5">
+          Your service booking has been confirmed. We are honoured
+          to assist you during this important time.
+        </p>
+
+
+        {/* ================= BOOKING DETAILS ================= */}
+        <div className="mt-4 rounded-xl bg-[#F8F6F3] px-4 py-2.5">
+
+          {/* VENUE */}
+          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
+            <span className="text-xs sm:text-sm text-gray-500">
+              Venue
+            </span>
+
+            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+              {submittedDetails.location}
+            </span>
+          </div>
+
+
+          {/* SERVICE */}
+          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
+            <span className="text-xs sm:text-sm text-gray-500">
+              Service
+            </span>
+
+            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right max-w-[65%]">
+              {submittedDetails.service}
+            </span>
+          </div>
+
+
+          {/* NAME */}
+          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
+            <span className="text-xs sm:text-sm text-gray-500">
+              Name
+            </span>
+
+            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+              {submittedDetails.name}
+            </span>
+          </div>
+
+
+          {/* MOBILE */}
+          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
+            <span className="text-xs sm:text-sm text-gray-500">
+              Mobile
+            </span>
+
+            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+              {submittedDetails.mobile}
+            </span>
+          </div>
+
+
+          {/* ATTENDEES */}
+          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
+            <span className="text-xs sm:text-sm text-gray-500">
+              Attendees
+            </span>
+
+            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+              {submittedDetails.attendees}
+            </span>
+          </div>
+
+
+          {/* DATE */}
+          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
+            <span className="text-xs sm:text-sm text-gray-500">
+              Date
+            </span>
+
+            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+              {submittedDetails.date
+                ? new Date(
+                    submittedDetails.date + "T00:00:00"
+                  ).toLocaleDateString("en-IN", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })
+                : ""}
+            </span>
+          </div>
+
+
+          {/* BOOKING ID */}
+          <div className="flex items-center justify-between gap-3 py-1.5">
+            <span className="text-xs sm:text-sm text-gray-500">
+              Booking ID
+            </span>
+
+            <span className="text-xs sm:text-sm font-bold text-[#123B7A] text-right">
+              {submittedDetails.bookingId}
+            </span>
+          </div>
+
+        </div>
+
+
+        {/* ================= OK BUTTON ================= */}
+        <button
+          onClick={() => {
+            setShowSuccess(false);
+
+            setLocation("");
+            setService("");
+            setName("");
+            setMobile("");
+            setDate("");
+            setAttendees("");
+            setErrors({ ...initialErrors });
+
+            router.push("/Front");
+          }}
+          className="mt-4 w-full rounded-full bg-[#064D91] hover:bg-[#043B70] active:scale-[0.99] px-6 py-2.5 text-sm sm:text-base font-semibold text-white transition-all duration-200"
+        >
+          OK
+        </button>
+
+      </div>
+
     </div>
-  );
+  </div>
+)}
+    </section>
+  </div>
+);
 }
