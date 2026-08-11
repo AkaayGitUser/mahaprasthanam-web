@@ -325,110 +325,72 @@ return (
 
       
   {showSuccess && (
-  <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4 py-4">
+  <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+    <div className="w-full max-w-[500px] rounded-2xl bg-white shadow-2xl overflow-hidden">
 
-    <div className="relative w-full max-w-[430px] max-h-[95vh] overflow-y-auto rounded-2xl bg-white shadow-2xl">
-
-      {/* ================= TOP ORANGE SECTION ================= */}
-      <div className="bg-gradient-to-r from-[#FF8A00] to-[#FFA51F] px-5 py-4 sm:py-5 text-center">
-
-        {/* SUCCESS ICON */}
-        <div className="mx-auto mb-2 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-white shadow-md">
-          <span className="text-2xl sm:text-3xl font-medium text-green-500">
-            ✓
-          </span>
+      {/* Header */}
+      <div className="bg-gradient-to-r from-[#FF8A00] to-[#FFA51F] py-5 text-center relative">
+        <div className="mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-md">
+          <span className="text-3xl text-green-500">✓</span>
         </div>
 
-        <h2 className="text-lg sm:text-xl font-bold text-white">
+        <h2 className="text-2xl font-bold text-white">
           Success!
         </h2>
-
       </div>
 
+      {/* Content */}
+      <div className="px-5 py-4">
 
-      {/* ================= POPUP CONTENT ================= */}
-      <div className="px-5 sm:px-6 py-4">
-
-        <h3 className="text-center text-base sm:text-lg font-bold text-[#1F2937]">
+        <h3 className="text-center text-xl font-bold text-[#1F2937]">
           Form Submitted Successfully
         </h3>
 
-        <p className="mt-1.5 text-center text-xs sm:text-sm text-gray-500 leading-5">
-          Your service booking has been confirmed. We are honoured
-          to assist you during this important time.
+        <p className="mt-2 text-center text-sm text-gray-500 leading-6">
+          Your service booking has been confirmed.
         </p>
 
+        {/* Details */}
+        <div className="mt-4 rounded-xl bg-[#F8F6F3] px-4 py-2">
 
-        {/* ================= BOOKING DETAILS ================= */}
-        <div className="mt-4 rounded-xl bg-[#F8F6F3] px-4 py-2.5">
-
-          {/* VENUE */}
-          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
-            <span className="text-xs sm:text-sm text-gray-500">
-              Venue
-            </span>
-
-            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+          <div className="flex justify-between py-2 border-b border-gray-200">
+            <span className="text-gray-500 text-sm">Venue</span>
+            <span className="font-semibold text-sm text-black">
               {submittedDetails.location}
             </span>
           </div>
 
-
-          {/* SERVICE */}
-          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
-            <span className="text-xs sm:text-sm text-gray-500">
-              Service
-            </span>
-
-            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right max-w-[65%]">
+          <div className="flex justify-between py-2 border-b border-gray-200">
+            <span className="text-gray-500 text-sm">Service</span>
+            <span className="font-semibold text-sm text-black">
               {submittedDetails.service}
             </span>
           </div>
 
-
-          {/* NAME */}
-          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
-            <span className="text-xs sm:text-sm text-gray-500">
-              Name
-            </span>
-
-            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+          <div className="flex justify-between py-2 border-b border-gray-200">
+            <span className="text-gray-500 text-sm">Name</span>
+            <span className="font-semibold text-sm text-black">
               {submittedDetails.name}
             </span>
           </div>
 
-
-          {/* MOBILE */}
-          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
-            <span className="text-xs sm:text-sm text-gray-500">
-              Mobile
-            </span>
-
-            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+          <div className="flex justify-between py-2 border-b border-gray-200">
+            <span className="text-gray-500 text-sm">Mobile</span>
+            <span className="font-semibold text-sm text-black">
               {submittedDetails.mobile}
             </span>
           </div>
 
-
-          {/* ATTENDEES */}
-          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
-            <span className="text-xs sm:text-sm text-gray-500">
-              Attendees
-            </span>
-
-            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+          <div className="flex justify-between py-2 border-b border-gray-200">
+            <span className="text-gray-500 text-sm">Attendees</span>
+            <span className="font-semibold text-sm text-black">
               {submittedDetails.attendees}
             </span>
           </div>
 
-
-          {/* DATE */}
-          <div className="flex items-center justify-between gap-3 py-1.5 border-b border-gray-200">
-            <span className="text-xs sm:text-sm text-gray-500">
-              Date
-            </span>
-
-            <span className="text-xs sm:text-sm font-semibold text-gray-800 text-right">
+          <div className="flex justify-between py-2 border-b border-gray-200">
+            <span className="text-gray-500 text-sm">Date</span>
+            <span className="font-semibold text-sm text-black">
               {submittedDetails.date
                 ? new Date(
                     submittedDetails.date + "T00:00:00"
@@ -441,43 +403,27 @@ return (
             </span>
           </div>
 
-
-          {/* BOOKING ID */}
-          <div className="flex items-center justify-between gap-3 py-1.5">
-            <span className="text-xs sm:text-sm text-gray-500">
-              Booking ID
-            </span>
-
-            <span className="text-xs sm:text-sm font-bold text-[#123B7A] text-right">
+          <div className="flex justify-between py-2">
+            <span className="text-gray-500 text-sm">Booking ID</span>
+            <span className="font-bold text-sm text-[#123B7A]">
               {submittedDetails.bookingId}
             </span>
           </div>
 
         </div>
 
-
-        {/* ================= OK BUTTON ================= */}
+        {/* Button */}
         <button
           onClick={() => {
             setShowSuccess(false);
-
-            setLocation("");
-            setService("");
-            setName("");
-            setMobile("");
-            setDate("");
-            setAttendees("");
-            setErrors({ ...initialErrors });
-
             router.push("/Front");
           }}
-          className="mt-4 w-full rounded-full bg-[#064D91] hover:bg-[#043B70] active:scale-[0.99] px-6 py-2.5 text-sm sm:text-base font-semibold text-white transition-all duration-200"
+          className="mt-5 w-full rounded-full bg-[#064D91] py-3 text-base font-semibold text-white hover:bg-[#043B70]"
         >
           OK
         </button>
 
       </div>
-
     </div>
   </div>
 )}
