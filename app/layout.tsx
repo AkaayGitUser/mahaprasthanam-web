@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +23,7 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
-<script src="http://mahaprasthanambot.akaayis.com/embed.js"></script>
+
 
 export const metadata: Metadata = {
   title: "Phoenix-Mahaprasthanam",
@@ -39,7 +40,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+<Script src="https://mahaprasthanambot.akaayis.com/embed.js" strategy="lazyOnload" />
+      </body>
     </html>
   );
 }
