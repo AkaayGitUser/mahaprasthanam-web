@@ -10,6 +10,7 @@ import Speakwithteam from "@/components/Home/speakwithteam";
 import Gallery from "@/components/Home/Gallery";
 import Testimonals from "@/components/Home/testimonals";
 import Ourblogs from "@/components/Home/ourblogs";
+import Faq from "@/components/layout/Faq";
 import Footer from "@/components/layout/Footer";
 import MapContainer from "@/components/Home/MapContainer";
 
@@ -31,6 +32,7 @@ export default function Home() {
         <Gallery />
         <Testimonals/>
         <Ourblogs/>
+        <Faq />
         <MapContainer
           activeLocationId={activeLocationId}
           onSelectLocation={handleSelectLocation}

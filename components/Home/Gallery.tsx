@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Gallery() {
     const images = [
@@ -19,7 +20,7 @@ export default function Gallery() {
     ];
 
     return (
-        <section className="bg-[#F8F6F3] pt-8 pb-20 overflow-hidden relative">
+        <section id="gallery" className="bg-[#F8F6F3] pt-8 pb-20 overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Category Badge */}
                 <div className="flex items-center justify-center gap-2.5 mb-4">
@@ -46,14 +47,14 @@ export default function Gallery() {
                         {images.map((src, index) => (
                             <div
                                 key={`img-1-${index}`}
-                                className="w-[21vw] min-w-[240px] max-w-[340px] h-full relative overflow-hidden rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] cursor-pointer shrink-0 select-none"
+                                className={`w-[21vw] min-w-[240px] max-w-[340px] h-full relative overflow-hidden rounded-3xl border-4 border-white shadow-sm transition-all duration-500 hover:z-10 hover:scale-[1.04] hover:shadow-lg cursor-pointer shrink-0 select-none ${index % 2 === 0 ? "-rotate-1" : "rotate-1"}`}
                             >
                                 <Image
                                     src={src}
                                     alt={`Gallery image ${index + 1}`}
                                     fill
                                     sizes="340px"
-                                    className="object-cover"
+                                    className="object-cover saturate-90 transition-transform duration-700 hover:scale-110 hover:saturate-125"
                                     draggable={false}
                                 />
                             </div>
@@ -65,20 +66,30 @@ export default function Gallery() {
                         {images.map((src, index) => (
                             <div
                                 key={`img-2-${index}`}
-                                className="w-[21vw] min-w-[240px] max-w-[340px] h-full relative overflow-hidden rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] cursor-pointer shrink-0 select-none"
+                                className={`w-[21vw] min-w-[240px] max-w-[340px] h-full relative overflow-hidden rounded-3xl border-4 border-white shadow-sm transition-all duration-500 hover:z-10 hover:scale-[1.04] hover:shadow-lg cursor-pointer shrink-0 select-none ${index % 2 === 0 ? "-rotate-1" : "rotate-1"}`}
                             >
                                 <Image
                                     src={src}
                                     alt={`Gallery image duplicate ${index + 1}`}
                                     fill
                                     sizes="340px"
-                                    className="object-cover"
+                                    className="object-cover saturate-90 transition-transform duration-700 hover:scale-110 hover:saturate-125"
                                     draggable={false}
                                 />
                             </div>
                         ))}
                     </div>
                 </div>
+            </div>
+
+            <div className="flex justify-center mt-8">
+                <Link
+                    href="/Front#gallery"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F58220] px-10 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#d96d12] focus:outline-none focus:ring-2 focus:ring-[#F58220] focus:ring-offset-2"
+                >
+                    View All
+                    <span aria-hidden="true">&rarr;</span>
+                </Link>
             </div>
 
             {/* Hidden SVG for ClipPath Definition */}
