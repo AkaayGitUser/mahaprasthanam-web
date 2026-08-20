@@ -12,7 +12,7 @@ interface AboutUsProps {
 
 export const AboutUsSection: React.FC<AboutUsProps> = ({
   bgImageUrl = "/images/hero/About Us/Ab1.png",
-  mainImageUrl = "/images/hero/About Us/Ab2.png",
+  mainImageUrl = "/images/hero/About Us/image.jpg",
   exploreMoreHref = "#",
 }) => {
   return (
@@ -62,7 +62,7 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
               <img
                 src={mainImageUrl}
                 alt="Memorial flower detail foreground"
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>

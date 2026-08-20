@@ -10,8 +10,10 @@ import Speakwithteam from "@/components/Home/speakwithteam";
 import Gallery from "@/components/Home/Gallery";
 import Testimonals from "@/components/Home/testimonals";
 import Ourblogs from "@/components/Home/ourblogs";
-import MapContainer from "@/components/Home/MapContainer";
+import Faq from "@/components/layout/Faq";
 import Footer from "@/components/layout/Footer";
+import MapContainer from "@/components/Home/MapContainer";
+
 
 export default function Home() {
   const [activeLocationId, setActiveLocationId] = useState<string | null>(
