@@ -9,7 +9,6 @@ import Facilities from "@/components/Home/Facilities";
 import Ourdesign from "@/components/Home/Ourdesign";
 import Aboutus from "@/components/Home/Aboutus";
 import Speakwithteam from "@/components/Home/speakwithteam";
-import MapContainer from "@/components/Home/MapContainer";
 import { useState } from "react";
 
 export default function Home() {
@@ -27,11 +26,6 @@ export default function Home() {
         <Testimonals />
         <Ourblogs />
       </main>
-
-      <MapContainer
-        activeLocationId={activeLocationId}
-        onSelectLocation={setActiveLocationId}
-      />
 
       <Footer />
     </>
