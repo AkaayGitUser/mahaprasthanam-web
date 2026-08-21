@@ -12,7 +12,6 @@ import Testimonals from "@/components/Home/testimonals";
 import Ourblogs from "@/components/Home/ourblogs";
 import Faq from "@/components/layout/Faq";
 import Footer from "@/components/layout/Footer";
-import MapContainer from "@/components/Home/MapContainer";
 
 
 export default function Home() {
@@ -108,12 +107,6 @@ export default function Home() {
 
             {/* ================= OUR BLOGS ================= */}
             <Ourblogs />
-
-            {/* ================= MAP ================= */}
-            <MapContainer
-              activeLocationId={activeLocationId}
-              onSelectLocation={handleSelectLocation}
-            />
 
             {/* ================= FOOTER ================= */}
             <Footer

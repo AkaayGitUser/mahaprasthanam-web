@@ -256,14 +256,14 @@ export default function Map({ activeLocationId, onSelectLocation }: MapProps) {
 
                 map.flyTo([activeLoc.lat, activeLoc.lng], ACTIVE_ZOOM, {
                     animate: true,
-                    duration: 1.5,
+                    duration: 2.2,
                 });
             }
         } else {
             // Zoom out to see everything
             map.flyTo(DEFAULT_CENTER, DEFAULT_ZOOM, {
                 animate: true,
-                duration: 1.2,
+                duration: 1.8,
             });
         }
     }, [activeLocationId]);
