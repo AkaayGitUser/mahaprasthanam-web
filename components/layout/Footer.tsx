@@ -87,15 +87,12 @@ export default function Footer({ activeLocationId, onSelectLocation }: FooterPro
                 <p className="text-xs sm:text-sm mt-0.5 text-gray-300 font-manrope">
                   JL. Raya Puputan No 142
                 </p>
-                <a
-                  href="https://www.google.com/maps/place/Vaikunta+Mahaprasthanam+Crematorium+(Jubilee+Hills)/@17.4173297,78.3925125,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb96a4e7078ee7:0x54c90c3d9f5e5e20!8m2!3d17.4173246!4d78.3950874!16s%2Fg%2F11bv2lngrg?entry=tts"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
+                <p
+                  
                   className="inline-block text-[#F78B1F] text-[11px] font-medium underline underline-offset-2 mt-0.5 hover:text-orange-400 transition-colors"
                 >
                   Get Direction
-                </a>
+                </p>
               </div>
             </div>
 

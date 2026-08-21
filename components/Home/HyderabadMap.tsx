@@ -112,15 +112,12 @@ export default function HyderabadMap() {
               Jubilee Hills
             </span>
             <span className="text-gray-300 text-[8px]">•</span>
-            <a
-              href="https://www.google.com/maps/place/Vaikunta+Mahaprasthanam+Crematorium+(Jubilee+Hills)/@17.4173297,78.3925125,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb96a4e7078ee7:0x54c90c3d9f5e5e20!8m2!3d17.4173246!4d78.3950874!16s%2Fg%2F11bv2lngrg?entry=tts"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
+            <p
+              
               className="text-[#F78B1F] font-semibold text-[7.5px] sm:text-[8.5px] underline underline-offset-1 hover:text-orange-600 tracking-tight leading-none"
             >
               Get Direction
-            </a>
+            </p>
           </div>
         </div>
 
@@ -141,15 +138,12 @@ export default function HyderabadMap() {
               Panjagutta
             </span>
             <span className="text-gray-300 text-[8px]">•</span>
-            <a
-              href="https://www.google.com/maps/place/Vaikuntha+Mahaprasthanam/@17.4248322,78.4456665,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb91002be76d0f:0xcf7c0dc944973370!8m2!3d17.4248322!4d78.4456665!16s%2Fg%2F11vwk92spj?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
+            <p
+              
               className="text-[#F78B1F] font-semibold text-[7.5px] sm:text-[8.5px] underline underline-offset-1 hover:text-orange-600 tracking-tight leading-none"
             >
               Get Direction
-            </a>
+            </p>
           </div>
         </div>
 
