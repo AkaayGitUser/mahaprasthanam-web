@@ -76,75 +76,74 @@ export default function HyderabadMap() {
 
   return (
     <div
-      onMouseEnter={() => setHasZoomed(true)}
-      className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] cursor-pointer p-1"
+      onMouseEnter={() => {
+        if (!hasZoomed) setHasZoomed(true);
+      }}
+      className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[440px] xl:max-w-[500px] cursor-pointer"
     >
-      {/* Zoomable Container - shifts left towards logo on zoom */}
+      {/* Zoomable Container - smooth zoom with balanced gap to the logo */}
       <div
-        className={`relative w-full h-auto transform transition-all duration-[1200ms] ease-[steps(5,end)] origin-[41%_50%] ${
-          hasZoomed
-            ? "scale-[1.34] sm:scale-[1.38] lg:scale-[1.42] -translate-x-14 sm:-translate-x-22 lg:-translate-x-32 -translate-y-3 sm:-translate-y-4 lg:-translate-y-5"
-            : "scale-100 -translate-x-2 sm:-translate-x-4 translate-y-0"
-        }`}
+        className={`relative w-full h-auto transform transition-all duration-[1000ms] ease-out origin-[32%_53%] ${hasZoomed
+          ? "scale-[1.7] sm:scale-[1.85] lg:scale-[2.0] translate-x-0"
+          : "scale-100 translate-x-0"
+          }`}
       >
 
-        {/* Map Image */}
+        {/* Map Image - Transparent outer background */}
         <img
           src={processedMapUrl || "/map.png"}
           alt="Telangana Map"
-          className="w-full h-auto object-contain drop-shadow-md"
+          className="w-full h-auto object-contain select-none pointer-events-none"
         />
 
-        {/* Jubilee Hills Location Marker */}
+        {/* Jubilee Hills Location Marker - appears when zoom reaches 90% */}
         <div
-          className={`absolute top-[44%] left-[37.5%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20 transition-all duration-500 ease-out ${
-            hasZoomed
-              ? "opacity-100 scale-100 pointer-events-auto delay-[1000ms]"
-              : "opacity-0 scale-90 pointer-events-none"
-          }`}
+          className={`absolute top-[49%] left-[34%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center z-20 transition-all duration-300 ease-out ${hasZoomed
+            ? "opacity-100 scale-100 pointer-events-auto delay-[900ms]"
+            : "opacity-0 scale-90 pointer-events-none delay-0"
+            }`}
         >
           {/* Black Pin Dot */}
-          <div className="w-1.5 h-1.5 rounded-full bg-[#0A1C28] mb-0.5 ring-1.5 ring-white/90 shadow-sm" />
+          <div className="w-[3px] h-[3px] rounded-full bg-[#0A1C28] mb-0.5" />
 
-          {/* Frosted Glassmorphism Badge */}
-          <div className="flex items-center gap-1.5 bg-white/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/80 shadow-md shadow-black/10 whitespace-nowrap">
-            <span className="font-extrabold text-[#0A1C28] text-[8.5px] sm:text-[9.5px] font-plus-jakarta leading-none tracking-tight">
-              Jubilee Hills
-            </span>
-            <span className="text-gray-300 text-[8px]">•</span>
-            <p
-              
-              className="text-[#F78B1F] font-semibold text-[7.5px] sm:text-[8.5px] underline underline-offset-1 hover:text-orange-600 tracking-tight leading-none"
-            >
-              Get Direction
-            </p>
-          </div>
+          {/* Unboxed Location Label & Direction Link */}
+          <span className="font-semibold text-[#0A1C28] text-[8px] font-[family-name:var(--font-plus-jakarta-sans)] leading-tight whitespace-nowrap">
+            Jubilee Hills
+          </span>
+          <a
+            href="https://www.google.com/maps/place/Vaikunta+Mahaprasthanam+Crematorium+(Jubilee+Hills)/@17.4173297,78.3925125,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb96a4e7078ee7:0x54c90c3d9f5e5e20!8m2!3d17.4173246!4d78.3950874!16s%2Fg%2F11bv2lngrg?entry=tts"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-[#F78B1F] font-normal text-[8px] font-[family-name:var(--font-plus-jakarta-sans)] underline underline-offset-[1.5px] decoration-[#F78B1F]  transition-colors mt-0.5 whitespace-nowrap cursor-pointer"
+          >
+            Get Direction
+          </a>
         </div>
 
-        {/* Panjagutta Location Marker */}
+        {/* Panjagutta Location Marker - appears when zoom reaches 90% */}
         <div
-          className={`absolute top-[62%] left-[39.5%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20 transition-all duration-500 ease-out ${
-            hasZoomed
-              ? "opacity-100 scale-100 pointer-events-auto delay-[1000ms]"
-              : "opacity-0 scale-90 pointer-events-none"
-          }`}
+          className={`absolute top-[64%] left-[39.5%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center z-20 transition-all duration-300 ease-out ${hasZoomed
+            ? "opacity-100 scale-100 pointer-events-auto delay-[900ms]"
+            : "opacity-0 scale-90 pointer-events-none delay-0"
+            }`}
         >
           {/* Black Pin Dot */}
-          <div className="w-1.5 h-1.5 rounded-full bg-[#0A1C28] mb-0.5 ring-1 ring-white/90 shadow-sm" />
+          <div className="w-[3px] h-[3px] rounded-full bg-[#0A1C28] mb-0.5" />
 
-          {/* Frosted Glassmorphism Badge */}
-          <div className="flex items-center gap-1.5 bg-white/85 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/80 shadow-md shadow-black/10 whitespace-nowrap">
-            <span className="font-extrabold text-[#0A1C28] text-[8.5px] sm:text-[9.5px] font-plus-jakarta leading-none tracking-tight">
-              Panjagutta
-            </span>
-            <span className="text-gray-300 text-[8px]">•</span>
-            <p
-              
-              className="text-[#F78B1F] font-semibold text-[7.5px] sm:text-[8.5px] underline underline-offset-1 hover:text-orange-600 tracking-tight leading-none"
-            >
-              Get Direction
-            </p>
-          </div>
+          {/* Unboxed Location Label & Direction Link */}
+          <span className="font-semibold text-[#0A1C28] text-[8px] font-[family-name:var(--font-plus-jakarta-sans)] leading-tight whitespace-nowrap">
+            Panjagutta
+          </span>
+          <a
+            href="https://www.google.com/maps/place/Phoenix+Vaikunta+Mahaprastanam/@17.4249701,78.4427851,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb9758ff856d23:0xee144c464f710631!8m2!3d17.424965!4d78.44536!16s%2Fg%2F11v0j87g5q?entry=tts"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-[#F78B1F] font-normal text-[7px] font-[family-name:var(--font-plus-jakarta-sans)] underline underline-offset-[1.5px] decoration-[#F78B1F]  transition-colors mt-0.5 whitespace-nowrap cursor-pointer"
+          >
+            Get Direction
+          </a>
         </div>
 
       </div>

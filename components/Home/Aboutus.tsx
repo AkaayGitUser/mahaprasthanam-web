@@ -16,7 +16,7 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
   exploreMoreHref = "#",
 }) => {
   return (
-    <section className="bg-[#F8F6F3] px-6 py-8 md:px-16 lg:px-24 font-sans text-slate-800">
+    <section className="bg-[#F8F6F3] px-6 py-10 md:py-14 md:px-16 lg:px-24 font-sans text-slate-800">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         {/* Left Column: Text Content */}
@@ -54,21 +54,21 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
         </div>
 
         {/* Right Column: Layered Images Frame */}
-        <div className="relative w-full max-w-[540px] mx-auto lg:max-w-none h-[480px]">
+        <div className="relative w-full max-w-[540px] mx-auto lg:max-w-none h-[480px] sm:h-[500px]">
           
           {/* Right Frame Image (Background / Higher position) */}
-          <div className="absolute right-0 top-0 w-[60%] h-[82%] z-10">
+          <div className="absolute right-0 -top-6 sm:-top-8 w-[58%] sm:w-[56%] h-[92%] sm:h-[96%] z-10 shadow-md">
             <div className="relative w-full h-full overflow-hidden bg-slate-200">
               <img
                 src={mainImageUrl}
-                alt="Memorial flower detail foreground"
-                className="h-full w-full object-cover"
+                alt="Memorial trishul detail"
+                className="h-full w-full object-cover object-top"
               />
             </div>
           </div>
 
           {/* Left Frame Image (Foreground / Lower position with White Mat Border) */}
-          <div className="absolute left-[8%] top-[10%] w-[43%] h-[62%] bg-white  shadow-md rounded-sm z-15 ">
+          <div className="absolute left-[8%] top-[14%] w-[43%] h-[60%] bg-white shadow-md rounded-sm z-15">
             <div className="relative w-full h-full overflow-hidden bg-slate-200">
               <img
                 src={bgImageUrl}
@@ -79,7 +79,7 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
           </div>
 
           {/* 10+ Years Of Experiences Counter (Aligned under Left Image) */}
-          <div className="absolute left-[8%] bottom-2 z-20 mb-8">
+          <div className="absolute left-[8%] bottom-0 z-20">
             <div className="flex items-baseline gap-1">
               <span className="text-2xl md:text-3xl font-medium text-[#F38120]">
                 10
@@ -88,7 +88,7 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
                 +
               </span>
             </div>
-            <div className="mt-2 text-lg md:text-base font-normal text-slate-600 leading-snug font-plus-jakarta">
+            <div className="mt-1 text-base md:text-base font-normal text-slate-600 leading-snug font-plus-jakarta">
               Years Of<br />
               Experiences
             </div>

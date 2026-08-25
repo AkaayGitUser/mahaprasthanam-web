@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 
+import Link from "next/link";
 import Hero from "@/components/Home/Hero";
 import Aboutus from "@/components/Home/Aboutus";
 import Ourdesign from "@/components/Home/Ourdesign";
@@ -60,12 +61,10 @@ export default function Home() {
                   pointer-events-auto
                 "
               >
-                <button
-                  type="button"
-                  onClick={() => {
-                    window.location.href = "/book";
-                  }}
+                <Link
+                  href="/Request"
                   className="
+                    inline-block
                     bg-orange-400
                     text-white
                     px-5
@@ -83,7 +82,7 @@ export default function Home() {
                   "
                 >
                   ENQUIRY US
-                </button>
+                </Link>
               </div>
             </div>
 
