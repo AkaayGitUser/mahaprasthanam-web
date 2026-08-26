@@ -77,7 +77,7 @@ function CustomGlassSelect({
 
 export default function Hero() {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   // States for search filters
   const [search, setSearch] = useState("");
@@ -88,7 +88,7 @@ export default function Hero() {
   const toggleAudio = async () => {
     const audio = audioRef.current;
     if (!audio) return;
-
+    
     if (isPlaying) {
       audio.pause();
       setIsPlaying(false);
@@ -107,14 +107,14 @@ export default function Hero() {
       <Header />
 
       {/* ================= AUDIO ================= */}
-      <audio ref={audioRef} src="/audio/om.mp3" preload="auto" loop />
+      <audio ref={audioRef} src="/audio/om.mp3" preload="auto" autoPlay loop />
 
       {/* ================= AUDIO BUTTON ================= */}
       <button
         type="button"
         onClick={toggleAudio}
         aria-label={isPlaying ? "Turn chanting off" : "Turn chanting on"}
-        className="absolute top-[105px] left-[60px] z-50 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-white hover:scale-105"
+        className="absolute top-43 left-3 sm:top-26.25 sm:left-15 z-50 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-white hover:scale-105"
       >
         {isPlaying ? (
           <Volume2 size={20} className="text-orange-500" />
@@ -125,13 +125,13 @@ export default function Hero() {
 
       {/* ================= HERO ================= */}
       <section
-        className="relative min-h-[90vh] md:min-h-screen bg-cover bg-center bg-fixed"
+        className="relative min-h-screen md:min-h-screen bg-cover bg-center bg-fixed"
         style={{ backgroundImage: "url('/images/hero/Section.png')" }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] md:min-h-screen text-center px-6 bg-gradient-to-b from-black/20 to-transparent">
-          <h1 className="font-plus-jakarta text-5xl md:text-5xl font-semibold text-white max-w-6xl">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen max-sm:pt-10 md:min-h-screen text-center px-6 bg-gradient-to-b from-black/20 to-transparent">
+          <h1 className="font-plus-jakarta text-3xl md:text-5xl font-semibold text-white max-w-6xl">
             A Sanctuary of Peace. A Legacy of Dignity.
           </h1>
 
