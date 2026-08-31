@@ -75,7 +75,7 @@ export default function Home() {
                     text-[15px]
                     tracking-[2px]
                     writing-mode-vertical
-                    hover:bg-[#013b75]
+                   
                     transition-colors
                     duration-300
                     cursor-pointer

@@ -101,7 +101,7 @@ export default function Facilities() {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-[18px] font-semibold text-[#1E293B] tracking-wide">
+                <span className="text-[18px] font-medium text-[#1E293B] tracking-wide">
                   {facility.name}
                 </span>
               </div>

@@ -1,5 +1,7 @@
 import React from "react";
-import Image from "next/image"; // Or standard <img> tags if using external URLs directly
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 interface AboutUsProps {
   /** URL for the back/left offset image frame */
@@ -44,12 +46,13 @@ export const AboutUsSection: React.FC<AboutUsProps> = ({
 
           {/* CTA Button */}
           <div className="pt-2">
-            <a
+            <Link
               href={exploreMoreHref}
-              className="inline-flex items-center gap-3 bg-[#F38120] hover:bg-[#e07213] text-white font-medium text-base px-8 py-3.5 rounded-full transition-all duration-200 shadow-sm"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#FF8A00] hover:bg-[#e07b00] text-white font-medium font-manrope text-base sm:text-[16px] px-8 sm:px-10 py-3 sm:py-3.5 rounded-full shadow-md hover:shadow-lg active:scale-95 transition-all duration-300 cursor-pointer"
             >
-              Explore More <span>→</span>
-            </a>
+              <span>Explore More</span>
+              <ArrowRight size={19} className="text-white shrink-0 stroke-[2.2]" />
+            </Link>
           </div>
         </div>
 

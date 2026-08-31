@@ -22,12 +22,12 @@ export default function Footer({ activeLocationId, onSelectLocation }: FooterPro
   };
 
   return (
-    <footer className="bg-[#0E2B3E] text-white pt-4 sm:pt-6 pb-0 overflow-hidden">
+    <footer className="relative bg-[#0E2B3E] text-white pt-0 pb-0 mt-0">
       {/* Contact Section Overlay Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Floating Top Contact Card */}
-        <div className="relative z-30 -top-4 sm:-top-5 md:-top-6 bg-[#0E2B3E] shadow-xl border border-[#123C56] rounded-lg overflow-hidden">
+        <div className="relative z-30 -translate-y-1/2 bg-[#0E2B3E] shadow-2xl border border-[#164361] rounded-xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#123C56]">
 
             {/* Call */}
@@ -101,16 +101,16 @@ export default function Footer({ activeLocationId, onSelectLocation }: FooterPro
         </div>
 
         {/* Main Footer Content */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-0 items-center -mt-4 sm:-mt-6 pb-0">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-0 items-center -mt-10 sm:-mt-12 md:-mt-14 pb-0">
 
           {/* Logo & Social Links */}
-          <div className="lg:col-span-4 flex flex-col items-start justify-center z-20 pl-4 sm:pl-5 lg:pl-6">
+          <div className="lg:col-span-5 flex flex-col items-start justify-center z-20 pl-6 sm:pl-10 lg:pl-16 xl:pl-20">
             <Image
               src="/images/hero/vaikunta.png"
               alt="Logo"
-              width={300}
-              height={150}
-              className="w-[240px] sm:w-[280px] lg:w-[320px] h-auto object-contain"
+              width={320}
+              height={160}
+              className="w-[260px] sm:w-[300px] lg:w-[340px] h-auto object-contain"
             />
 
             <div className="flex gap-3 mt-4 sm:mt-5">
@@ -132,8 +132,8 @@ export default function Footer({ activeLocationId, onSelectLocation }: FooterPro
             </div>
           </div>
 
-          {/* Hyderabad Map Vector Graphic */}
-          <div className="lg:col-span-8 flex items-center justify-center lg:justify-center overflow-hidden">
+          {/* Hyderabad Map Vector Graphic - Aligned flush to right edge */}
+          <div className="lg:col-span-7 flex items-center justify-end overflow-hidden -mr-4 sm:-mr-6 lg:-mr-8">
             <HyderabadMap />
           </div>
 

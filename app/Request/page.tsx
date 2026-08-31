@@ -329,7 +329,7 @@ return (
     <div className="w-full max-w-[500px] rounded-2xl bg-white shadow-2xl overflow-hidden">
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#FF8A00] to-[#FFA51F] py-5 text-center relative">
+      <div className="bg-[#F38120] py-5 text-center relative">
         <div className="mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-md">
           <span className="text-3xl text-green-500">✓</span>
         </div>

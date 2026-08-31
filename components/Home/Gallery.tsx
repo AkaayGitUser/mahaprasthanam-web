@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function Gallery() {
     const images = [
@@ -82,13 +83,13 @@ export default function Gallery() {
                 </div>
             </div>
 
-            <div className="flex justify-center mt-8">
+            <div className="flex items-center justify-center mt-10">
                 <Link
                     href="/Front#gallery"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F58220] px-10 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#d96d12] focus:outline-none focus:ring-2 focus:ring-[#F58220] focus:ring-offset-2"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#FF8A00] hover:bg-[#e07b00] px-8 sm:px-10 py-3 sm:py-3.5 text-base sm:text-[16px] font-medium text-white font-manrope shadow-md hover:shadow-lg active:scale-95 transition-all duration-300 cursor-pointer"
                 >
-                    View All
-                    <span aria-hidden="true">&rarr;</span>
+                    <span>View All</span>
+                    <ArrowRight size={19} className="text-white shrink-0 stroke-[2.2]" />
                 </Link>
             </div>
 
